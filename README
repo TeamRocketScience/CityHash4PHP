@@ -1,0 +1,35 @@
+Google's CityHash extension for PHP.
+
+Dependencies
+==================
+
+Extension requires libcityhash library. You can checkout it via svn:
+
+    svn checkout http://cityhash.googlecode.com/svn/trunk/ cityhash
+    
+or simply download it from
+
+    http://code.google.com/p/cityhash/downloads/list
+    
+Follow the instructions in README file to install library.
+
+Installation
+==================
+
+To compile extension, you will have to execute the following steps:
+
+    $ phpize
+    $ ./configure --with-cityhash
+    $ make
+    $ [sudo] make install
+
+Add following line to your php.ini and restart Apache
+extension=cityhash.so
+
+Using
+==================
+
+<?php
+
+  print CityHash64('sample string');
+  print CityHash128('another string');
